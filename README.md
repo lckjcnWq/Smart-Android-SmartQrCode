@@ -1,0 +1,2 @@
+# SmartQrCode
+QrCode  scan  everyThing
