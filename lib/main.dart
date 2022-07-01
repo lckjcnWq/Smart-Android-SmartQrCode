@@ -44,9 +44,43 @@ class _MyHomePageState extends State<MyHomePage> {
     print(str);
   };
 
+  var data1 = Future.delayed(Duration(seconds: 2),(){
+    throw AssertionError("Error");
+  }).then((value) => {
+    print(value)
+  }).catchError((onError){
+    print(onError);
+  }).whenComplete(() => {
+
+  });
+
+  @override
+  void initState() {
+    print("main_initState");
+    super.initState();
+  }
+
+  @override
+  void didChangeDependencies() {
+    print("main_didChangeDependencies");
+    super.didChangeDependencies();
+  }
+
+  @override
+  void deactivate() {
+    print("main_deactivate");
+    super.deactivate();
+  }
+
+  @override
+  void dispose() {
+    print("main_dispose");
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-
+    print("main_build");
     return Scaffold(
       appBar: AppBar(
         title: Text(widget.title),
