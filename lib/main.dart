@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'CustomWidget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -67,6 +68,18 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   @override
+  void reassemble() {
+    print("main_reassemble");
+    super.reassemble();
+  }
+
+  @override
+  void didUpdateWidget(covariant MyHomePage oldWidget) {
+    print("main_didUpdateWidget");
+    super.didUpdateWidget(oldWidget);
+  }
+
+  @override
   void deactivate() {
     print("main_deactivate");
     super.deactivate();
@@ -89,18 +102,14 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
-            Text(
-              '$_counter',
-              style: Theme.of(context).textTheme.headline4,
-            ),
+           TextButton(onPressed: (){
+             Navigator.push(context, MaterialPageRoute(builder: (context) {
+               return TopBoxA();
+             }));
+           }, child: Text("打开新页面"))
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: const Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }
