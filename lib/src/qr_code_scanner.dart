@@ -6,11 +6,11 @@ import 'package:flutter/services.dart';
 
 import 'lifecycle_event_handler.dart';
 import 'qr_scanner_overlay_shape.dart';
-import 'types/barcode.dart';
-import 'types/barcode_format.dart';
-import 'types/camera.dart';
-import 'types/camera_exception.dart';
-import 'types/features.dart';
+import 'qrcode/barcode.dart';
+import 'qrcode/barcode_format.dart';
+import 'qrcode/camera.dart';
+import 'qrcode/camera_exception.dart';
+import 'qrcode/features.dart';
 import 'web/flutter_qr_stub.dart'
 // ignore: uri_does_not_exist
     if (dart.library.html) 'web/flutter_qr_web.dart';

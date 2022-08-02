@@ -1,14 +1,11 @@
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SharedPreferencesUtil {
-  SharedPreferencesUtil._();
-
-  static SharedPreferencesUtil _instance;
-  SharedPreferences sharedPreferences;
+  static late SharedPreferencesUtil _instance;
 
   static SharedPreferencesUtil getInstance() {
     if (_instance == null) {
-      _instance = SharedPreferencesUtil._();
+      _instance = SharedPreferencesUtil();
     }
     return _instance;
   }
@@ -21,6 +18,11 @@ class SharedPreferencesUtil {
   Future getBool(String tag) async {
     SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
     return sharedPreferences.getBool(tag);
+  }
+
+  Future setString(String tag, String value) async {
+    SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    return sharedPreferences.setString(tag, value);
   }
 
   Future getString(String tag) async {

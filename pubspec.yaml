@@ -27,6 +27,7 @@ dependencies:
   flutter_widget_from_html_core: ^0.4.1
   tuple: ^1.0.3
   flutter_html: ^0.10.4
+  flutter_easyloading: ^2.2.2
   flutter_slidable: ^0.5.7
   common_utils: ^1.2.1
   event_bus: ^1.1.1
